@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.learning.xql.model.domain.XQLModel" table="T_XQL_MODEL" batch-size="30" dynamic-update="true">
+		<id name="id" column="ID" length="32">
+			<generator class="uuid.hex" />
+		</id>
+        <property name="name" column="NAME" length="180" not-null="true" />
+        <property name="relations" column="RELATIONS" length="600" not-null="true" />
+        <property name="createdBy" column="CREATED_BY" length="32" not-null="true" />
+        <property name="createdAt" column="CREATED_AT" not-null="true" />
+        <property name="updatedBy" column="UPDATED_BY" length="32" not-null="true" />
+        <property name="updatedAt" column="UPDATED_AT" not-null="true" />
+	</class>
+</hibernate-mapping>

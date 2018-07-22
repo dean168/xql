@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.learning.xql.model.domain.XQLSource" table="T_XQL_SOURCE" batch-size="30" dynamic-update="true">
+		<id name="id" column="ID" length="32">
+			<generator class="uuid.hex" />
+		</id>
+        <discriminator column="type" length="20" />
+        <property name="name" column="NAME" length="180" not-null="true" />
+        <property name="createdBy" column="CREATED_BY" length="32" not-null="true" />
+        <property name="createdAt" column="CREATED_AT" not-null="true" />
+        <property name="updatedBy" column="UPDATED_BY" length="32" not-null="true" />
+        <property name="updatedAt" column="UPDATED_AT" not-null="true" />
+        <subclass name="org.learning.xql.model.domain.XQLDatabase" extends="org.learning.xql.model.domain.XQLSource" discriminator-value="DATABASE">
+            <property name="driverClassName" column="DRIVER_CLASSNAME" length="120" not-null="true" />
+            <property name="url" column="URL" length="600" not-null="true" />
+            <property name="username" column="USER_NAME" length="120" not-null="true" />
+            <property name="password" column="PASSWORD" length="180" not-null="true" />
+            <property name="maxActive" column="MAX_ACTIVE" not-null="true" />
+        </subclass>
+	</class>
+</hibernate-mapping>

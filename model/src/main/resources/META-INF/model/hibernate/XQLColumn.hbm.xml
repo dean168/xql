@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="org.learning.xql.model.domain.XQLColumn" table="T_XQL_COLUMN" batch-size="30" dynamic-update="true">
+		<id name="id" column="ID" length="32">
+			<generator class="uuid.hex" />
+		</id>
+        <property name="exprs" column="EXPRS" length="600" not-null="true" />
+	</class>
+</hibernate-mapping>

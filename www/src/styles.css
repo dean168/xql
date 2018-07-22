@@ -1,0 +1,27 @@
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #bfc3c6;
+}
+
+.opacity0 {
+    opacity: 0;
+}
+.opacity1 {
+    opacity: 1;
+}
+
+.xs-block {
+    display: block;
+}
+.xs-hide {
+    display: none;
+}
