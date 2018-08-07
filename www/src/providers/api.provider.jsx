@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-import * as setup from '../setup';
+import * as config from '../config';
 import { subject } from './subject.provider';
 
 
@@ -25,22 +25,22 @@ export const fetch = (options) => {
 
 export const _animate = (animate) => {
     if (animate == undefined || (typeof animate == 'boolean' && animate)) {
-        animate = { subject: setup.components.loading.subject, message: setup.components.loading.message };
+        animate = { subject: config.components.loading.subject, message: config.components.loading.message };
     } else if (typeof animate == 'string') {
-        animate = { subject: animate, message: setup.components.loading.message };
+        animate = { subject: animate, message: config.components.loading.message };
     }
-    animate && !animate.subject && (animate.subject = setup.components.loading.subject);
-    animate && !animate.message && (animate.subject = setup.components.loading.message);
+    animate && !animate.subject && (animate.subject = config.components.loading.subject);
+    animate && !animate.message && (animate.subject = config.components.loading.message);
     return animate;
 }
 
 export const _options = (options) => {
-    options.url = setup.apiURL(options.url);
+    options.url = config.apiURL(options.url);
     if (!options.contentType) {
         options.contentType = 'application/json;charset=UTF-8';
         options.data && (options.data = JSON.stringify(options.data));
     }
-    !options.timeout && (options.timeout = setup.ajax.timeout);
+    !options.timeout && (options.timeout = config.ajax.timeout);
     !options.dataType && (options.dataType = 'json');
     return options;
 }

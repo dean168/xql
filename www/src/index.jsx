@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
-import * as setup from './setup';
+import * as config from './config';
 
 import Loading from './components/loading/loading.component';
 
@@ -33,12 +33,12 @@ class App extends Component {
         return (
             this.state.prepared ? (
                 <div>
-                    <Loading subject={setup.components.loading.subject} />
+                    <Loading subject={config.components.loading.subject} />
                     {this.routes()}
                 </div>
             ) : (
                     <div>
-                        <Loading subject={setup.components.loading.subject} />
+                        <Loading subject={config.components.loading.subject} />
                     </div>
                 )
         );
