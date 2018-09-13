@@ -7,18 +7,20 @@ import org.learning.basic.core.domain.Basic;
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 
 @JsonAutoDetect(creatorVisibility = NONE, fieldVisibility = NONE, getterVisibility = NONE, setterVisibility = NONE, isGetterVisibility = NONE)
-public abstract class XQLSource extends Basic {
+public class XQLSource extends Basic {
+
+    public static final int DATABASE_TYPE = 1;
 
     @JsonProperty("type")
-    private String type;
+    private Integer type;
     @JsonProperty("name")
     private String name;
 
-    public String getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Integer type) {
         this.type = type;
     }
 

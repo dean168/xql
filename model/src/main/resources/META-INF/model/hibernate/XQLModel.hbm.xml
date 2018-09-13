@@ -8,6 +8,7 @@
 			<generator class="uuid.hex" />
 		</id>
         <property name="name" column="NAME" length="180" not-null="true" />
+        <many-to-one name="source" column="SOURCE_ID" class="org.learning.xql.model.domain.XQLSource" />
         <property name="relations" column="RELATIONS" length="600" not-null="true" />
         <property name="createdBy" column="CREATED_BY" length="32" not-null="true" />
         <property name="createdAt" column="CREATED_AT" not-null="true" />

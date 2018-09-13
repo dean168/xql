@@ -11,6 +11,8 @@ import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 @JsonAutoDetect(creatorVisibility = NONE, fieldVisibility = NONE, getterVisibility = NONE, setterVisibility = NONE, isGetterVisibility = NONE)
 public class XQLDesign extends Basic {
 
+    @JsonProperty("model")
+    private XQLModel model;
     @JsonProperty("columns")
     private Set<XQLColumn> columns;
     @JsonProperty("filter")
@@ -21,6 +23,14 @@ public class XQLDesign extends Basic {
     private Integer offset;
     @JsonProperty("limit")
     private Integer limit;
+
+    public XQLModel getModel() {
+        return model;
+    }
+
+    public void setModel(XQLModel model) {
+        this.model = model;
+    }
 
     public Set<XQLColumn> getColumns() {
         return columns;

@@ -11,6 +11,8 @@ public class XQLModel extends Basic {
 
     @JsonProperty("name")
     private String name;
+    @JsonProperty("source")
+    private XQLSource source;
     @JsonProperty("relations")
     private String relations;
 
@@ -20,6 +22,14 @@ public class XQLModel extends Basic {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public XQLSource getSource() {
+        return source;
+    }
+
+    public void setSource(XQLSource source) {
+        this.source = source;
     }
 
     public String getRelations() {

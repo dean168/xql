@@ -7,6 +7,7 @@
 		<id name="id" column="ID" length="32">
 			<generator class="uuid.hex" />
 		</id>
+        <property name="name" column="NAME" length="255" not-null="true" />
         <property name="exprs" column="EXPRS" length="600" not-null="true" />
 	</class>
 </hibernate-mapping>

@@ -8,7 +8,7 @@ import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 
 import * as config from './config';
 
-import Loading from './components/loading/loading.component';
+import LoadingComponent from './components/loading/loading.component';
 
 import MainLayout from './layout/main.layout';
 
@@ -20,27 +20,21 @@ class App extends Component {
     }
 
     routes = () => {
-        return (
+        return this.state.prepared ? (
             <Router>
                 <Switch>
                     <Route path='/' component={MainLayout} />
                 </Switch>
             </Router>
-        );
+        ) : undefined;
     }
 
     render() {
         return (
-            this.state.prepared ? (
-                <div>
-                    <Loading subject={config.components.loading.subject} />
-                    {this.routes()}
-                </div>
-            ) : (
-                    <div>
-                        <Loading subject={config.components.loading.subject} />
-                    </div>
-                )
+            <div>
+                {this.routes()}
+                <LoadingComponent observable={config.components.loading.observable} />
+            </div>
         );
     }
 }

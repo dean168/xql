@@ -1,0 +1,19 @@
+.xql-design-model-layout .xql-design-model-content {
+    position: relative;
+    overflow: auto;
+    height: 40vw;
+}
+.xql-design-model-layout .xql-design-model-content .xql-design-tables-panel {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 20%;
+}
+.xql-design-model-layout .xql-design-model-content .xql-design-relations-panel {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 80%;
+}

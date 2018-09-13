@@ -9,7 +9,7 @@ import Header from '../header/header.component';
 import Footer from '../footer/footer.component';
 
 import QueryLayout from '../query/query.layout';
-import XDELayout from '../xde/xde.layout';
+import DesignLayout from '../design/design.layout';
 
 import './main.layout.scss';
 
@@ -18,7 +18,7 @@ export default class MainLayout extends Component {
 
     constructor(props) {
         super(props);
-        (location.hash != '#/query' && location.hash != '#/xde') && (location.hash = '#/query');
+        (location.hash != '#/query' && location.hash != '#/design') && (location.hash = '#/query');
     }
 
     render() {
@@ -27,7 +27,7 @@ export default class MainLayout extends Component {
                 <Header hash={location.hash} />
                 <Content>
                     <Route path='/query' component={QueryLayout} />
-                    <Route path='/xde' component={XDELayout} />
+                    <Route path='/design' component={DesignLayout} />
                 </Content>
                 <Footer />
             </Layout>

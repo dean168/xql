@@ -30,7 +30,7 @@ export default class HeaderComponent extends Component {
                 <div className="xs-logo" />
                 <Menu theme="dark" mode="horizontal" onClick={this.click} selectedKeys={[this.state.hash]} className="xs-menu">
                     <Menu.Item key="#/query">Query</Menu.Item>
-                    <Menu.Item key="#/xde">XDE</Menu.Item>
+                    <Menu.Item key="#/design">Design</Menu.Item>
                 </Menu>
             </Header>
         )

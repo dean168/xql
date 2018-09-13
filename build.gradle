@@ -91,7 +91,7 @@ project(':trans') {
 	}
 }
 
-project(':xde') {
+project(':design') {
 	// 添加 war 插件
 	apply plugin: 'war'
 	// 添加 jetty 插件，执行命令 gradle jettyRun 就可以 http://127.0.0.1:8080/public/ 访问了
@@ -115,7 +115,7 @@ project(':xde') {
 	}
 
 	gretty {
-		extraResourceBases "${rootProject.projectDir}/xde/src/main/webapp"
+		extraResourceBases "${rootProject.projectDir}/design/src/main/webapp"
 //        jvmArgs = ['-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000']
         jvmArgs = ['-Xmx256m']
 		httpPort = 8080
